@@ -24,14 +24,15 @@ function Flights() {
         for (let i = 0; i < distancesArray.lenght; i++){
             totalDisance = totalDisance + distancesArray[i]
         }
+        if (totalDisance > distanceLimit){
+            throw new Error
+        }
         if (totalDisance <= (distanceLimit/2)){
             return "The revision needs to be done within the next 3 months"
-        }else if (totalDisance <= 3*(distanceLimit/4)){
+        }else if (totalDisance <= 3*distanceLimit/4){
             return "The revision needs to be done within the next 2 months"
         }else if (totalDisance <= distanceLimit){
             return "The revision needs to be done within the next month"
-        }else{
-            return Error
         }
     }
     return {calculateNumberOfFlights, checkAircraftRevision};
