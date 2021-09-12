@@ -1,7 +1,7 @@
 function Passengers() {
     function checkFlightCapacity(flightCapacity, passengersArray){
         let passengerTotal = 0
-        for (let i = 0; i<passengersArray.lenght; i++){
+        for (let i = 0; i<passengersArray.length; i++){
             passengerTotal = passengerTotal + passengersArray[i];
         }
         console.log(passengerTotal);

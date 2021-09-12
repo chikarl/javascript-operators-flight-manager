@@ -20,18 +20,19 @@ function Flights() {
     }
 
     function checkAircraftRevision(distanceLimit, distancesArray){
-        let totalDisance = 0;
-        for (let i = 0; i < distancesArray.lenght; i++){
-            totalDisance = totalDisance + distancesArray[i]
+        let totalDistance = 0;
+        for (let i = 0; i < distancesArray.length; i++){
+            totalDistance = totalDistance + distancesArray[i]
         }
-        if (totalDisance > distanceLimit){
+        console.log(totalDistance);
+        if (totalDistance > distanceLimit){
             throw new Error
         }
-        if (totalDisance <= (distanceLimit/2)){
+        if (totalDistance <= (distanceLimit/2)){
             return "The revision needs to be done within the next 3 months"
-        }else if (totalDisance <= 3*distanceLimit/4){
+        }else if (totalDistance <= 3*distanceLimit/4){
             return "The revision needs to be done within the next 2 months"
-        }else if (totalDisance <= distanceLimit){
+        }else if (totalDistance <= distanceLimit){
             return "The revision needs to be done within the next month"
         }
     }
@@ -39,5 +40,5 @@ function Flights() {
 
     //calculateNumberOfFlights(1001, 100)
 }
-Flights()
+
 module.exports = Flights();
